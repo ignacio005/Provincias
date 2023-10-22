@@ -2,22 +2,38 @@ package dominio;
 import java.util.ArrayList;
 
 public class Provincia {
-
-	public static void main(String[] args) {
+	
+	String nombre;
+	int numeroDeHabitantes;
+	ArrayList<Municipio> municipios;
+	public Provincia(String nombre) {
 		
-		ArrayList<Localidad> municipios = new ArrayList<Localidad>();
-	    municipios.add(new Localidad("municipio 1", 35));
-	    municipios.add(new Localidad("municipio 2", 90));
-	    
-	    for(Localidad a: municipios) {
-	    	System.out.println(a.toString());
-	    }
-	    int totalprovincia = 0;
-        for (Localidad data : municipios) {
-           totalprovincia += data.numeroDeHabitantes; 
-        }
-        System.out.println("El número total de los habitantes del la provincia es: " + totalprovincia);
+		this.municipios= new ArrayList <Municipio>();
+		this.nombre=nombre;
+	}
+	public int getNumeroDeHabitantes() {
+		numeroDeHabitantes=0;
+		for(Municipio municipio: municipios) {
+			numeroDeHabitantes+=municipio.getNumeroDeHabitantes();	
+		}
+		
+		return numeroDeHabitantes;
+		
+	}
+	public void addMunicipio(Municipio m) {
+		municipios.add(m);
+	}
+	public ArrayList <Municipio> getmunicipios(){
+		return municipios;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	@Override
+	public String toString() {
+		return "El nombre de la provincia es " + nombre + " y tiene " + getNumeroDeHabitantes() + " habitantes.";
+		
 
 	}
-
 }
+

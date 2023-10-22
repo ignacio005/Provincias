@@ -2,8 +2,8 @@ package dominio;
 
 public class Localidad {
 	
-	public String nombre;
-	public int numeroDeHabitantes;
+	private String nombre;
+	private int numeroDeHabitantes;
 	
 	public String getNombre() {
 		return nombre;	
@@ -23,7 +23,7 @@ public class Localidad {
 	
 	@Override
 	public String toString() {
-		return "El nombre es " + nombre + " y tiene " + numeroDeHabitantes + " habitantes.";
+		return "El nombre de la localidad es " + nombre + " y tiene " + numeroDeHabitantes + " habitantes.";
 	}
 	
 	public Localidad(String nombre, int numeroDeHabitantes) {

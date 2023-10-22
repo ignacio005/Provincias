@@ -3,41 +3,56 @@ import java.util.ArrayList;
 
 public class Municipio {
 	
-	public static void main(String[] args) {
+	String nombre;
+	int numeroDeHabitantes;
+	ArrayList<Localidad> localidades;
+	public Municipio(String nombre) {
 		
-		//Municipio 1
+		this.localidades= new ArrayList <Localidad>();
+		this.nombre=nombre;
+	}
+	public int getNumeroDeHabitantes() {
+		numeroDeHabitantes=0;
+		for(Localidad localidad:localidades) {
+			numeroDeHabitantes+=localidad.getNumeroDeHabitantes();	
+		}
 		
-		ArrayList<Localidad> localidadesm1 = new ArrayList<Localidad>();
-	    localidadesm1.add(new Localidad("localidad 1", 12));
-	    localidadesm1.add(new Localidad("localidad 2", 23));
-	    
-	    for(Localidad e: localidadesm1) {
-	    	System.out.println(e.toString());
-	    }
-	    int totalm1 = 0;
-        for (Localidad data : localidadesm1) {
-           totalm1 += data.numeroDeHabitantes; 
-        }
-        System.out.println("El número total de los habitantes del municipio 1 es: " + totalm1);
-        
-        
-        //Municipio 2
-        
-        ArrayList<Localidad> localidadesm2 = new ArrayList<Localidad>();
-	    localidadesm2.add(new Localidad("localidad 3", 35));
-	    localidadesm2.add(new Localidad("localidad 4", 55));
-	    
-	    for(Localidad i: localidadesm2) {
-	    	System.out.println(i.toString());
-	    }
-	    int totalm2 = 0;
-        for (Localidad data : localidadesm2) {
-           totalm2 += data.numeroDeHabitantes; 
-        }
-        System.out.println("El número total de los habitantes del municipio 2 es: " + totalm2);
-	    
-	    
+		return numeroDeHabitantes;
+		
+	}
+	public void addLocalidad(Localidad l) {
+		localidades.add(l);
+	}
+	public ArrayList <Localidad> getlocalidades(){
+		return localidades;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	@Override
+	public String toString() {
+		return "El nombre del municipio es " + nombre + " y tiene " + getNumeroDeHabitantes() + " habitantes.";
 	}
 	
 	
+	
+	
+	
+	
+	
 }
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
