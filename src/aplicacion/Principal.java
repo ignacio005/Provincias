@@ -2,12 +2,10 @@ package aplicacion;
 import dominio.Localidad;
 import dominio.Municipio;
 import dominio.Provincia;
-import presentacion.Interfaz;
 
 public class Principal {
 	
 	public static void main(String[] args) {
-		
 		
 		
 		Localidad localidad1 = new Localidad("localidad 1", 12);
@@ -29,7 +27,7 @@ public class Principal {
 		System.out.println(localidad4.toString());
 		System.out.println(municipio.toString());
 		System.out.println(provincia.toString());
-		Interfaz.Leer();
+		
 	}
 
 }
