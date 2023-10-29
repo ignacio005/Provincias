@@ -1,7 +1,9 @@
 package aplicacion;
+import java.util.*;
 import dominio.Localidad;
 import dominio.Municipio;
 import dominio.Provincia;
+import presentacion.Interfaz;
 
 public class Principal {
 	
@@ -28,7 +30,14 @@ public class Principal {
 		System.out.println(municipio.toString());
 		System.out.println(provincia.toString());
 		
-	}
+		String p;
+		ArrayList <Provincia> lista = new ArrayList <Provincia>();
+		Boolean seguir;
+		do {
+			p=Interfaz.leerPeticion();
+			seguir=Interfaz.procesarPeticion(p, lista);
+		}
+		while(seguir);
 
 }
- 
+} 
